@@ -1,4 +1,4 @@
-# jquery-textfit
+# textfitJS
 
 文字がはみ出ないように制御するjsです。
 
