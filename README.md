@@ -1,5 +1,7 @@
 # textfitJS
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/b8b076a76cae4b24baeb40f4ed6ed438)](https://app.codacy.com/gh/ishi720/textfitJS/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+
 文字がはみ出ないように制御するjsです。
 
 # SAMPLE
