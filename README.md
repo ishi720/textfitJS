@@ -13,13 +13,13 @@ https://ishi720.github.io/textfitJS/
 - npm
 
 ```
-npm i textfitJS
+npm i textfitjs
 ```
 
 - yarn
 
 ```
-yarn add textfitJS
+yarn add textfitjs
 ```
 
 # 使い方
