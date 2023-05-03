@@ -1,5 +1,5 @@
 {
-  "name": "textfitJS",
+  "name": "textfitjs",
   "version": "1.0.0",
   "description": "文字がはみ出ないように制御するjsです。",
   "main": "textfitJS.js",
