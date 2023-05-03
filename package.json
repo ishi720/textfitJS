@@ -1,0 +1,25 @@
+{
+  "name": "textfitJS",
+  "version": "1.0.0",
+  "description": "文字がはみ出ないように制御するjsです。",
+  "main": "textfitJS.js",
+  "files": [
+    "README.md",
+    "package.json",
+    "textfitJS.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishi720/textfitJS.git"
+  },
+  "author": "ishi720",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ishi720/textfitJS/issues"
+  },
+  "homepage": "https://github.com/ishi720/textfitJS#readme",
+  "keywords": ["textfitJS"]
+}
