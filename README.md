@@ -30,7 +30,9 @@ yarn add textfitjs
 ### textShrinkCut()
 
 ```js
-textShrinkCut( selector, leader, repeat );
+const str2 = new textFit(".str2"); //初期化
+str2.textShrinkCut('..など', 15); //てきすとふぃっと
+str2.restoreOriginalText(); //元に戻す
 ```
 
 **説明**
@@ -39,7 +41,6 @@ textShrinkCut( selector, leader, repeat );
 
 **パラメータ**
 
-- selector: cssセレクタ
 - leader: 省略文字 (省略可。デフォルト"…")
 - repeat: 繰り返す上限回数(省略可。デフォルト10)
 
@@ -49,8 +50,11 @@ textShrinkCut( selector, leader, repeat );
 ### textCut()
 
 ```js
-textCut( selector, leader )
+const str1 = new textFit(".str1"); //初期化
+str1.textCut('【終了】'); //てきすとふぃっと
+str1.restoreOriginalText(); //元に戻す
 ```
+
 
 **説明**
 
@@ -58,6 +62,5 @@ textCut( selector, leader )
 
 **パラメータ**
 
-- selector: cssセレクタ
 - leader: 省略文字 (省略可。デフォルト"…")
 

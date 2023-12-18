@@ -47,25 +47,45 @@
     <h1>sample</h1>
 
     <div style="display: table-cell;width: 500px;padding: 10px;">
-
-        <code>
-            textCut('.str1', '【終了】' );
-        </code>
-        <p>要素から文字がはみ出たら文字を、文字を削り、第二引数を末尾につけます。</p>
-        <button onclick="textCut('.str1','【終了】' )">実行</button>
+        <div style="background-color: #4d4d4d; padding: 10px;">
+            <code>
+                const str1 = new textFit(".str1"); //初期化
+            </code>
+            <br>
+            <code>
+                str1.textCut('【終了】'); //てきすとふぃっと
+            </code>
+            <br>
+            <code>
+                str1.restoreOriginalText(); //元に戻す
+            </code>
+        </div>
+        <p>要素から文字がはみ出たら文字を、文字を削り、引数の文字を末尾につけます。</p>
+        <button onclick="button1()">実行</button>
+        <button onclick="button2()">戻す</button>
 
         <div class="item str1">あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■1■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■2■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■3■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■4■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■5■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■6■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■7■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■8■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■9■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■10■</div>
 
     </div>
 
     <div style="display: table-cell;width: 500px;padding: 10px;">
-
-        <code>
-            textShrinkCut('.str2', '..など', 15);
-        </code>
-        <p>要素から文字がはみ出たら小さくします。それでもはみ出る場合は、文字を削り、第二引数を末尾につけます。</p>
-
-        <button onclick="textShrinkCut('.str2', '..など', 15)">実行</button>
+        <div style="background-color: #4d4d4d; padding: 10px;">
+            <code>
+                const str2 = new textFit(".str2"); //初期化
+            </code>
+            <br>
+            <code>
+                str2.textShrinkCut('..など', 15); //てきすとふぃっと
+            </code>
+            <br>
+            <code>
+                str2.restoreOriginalText(); //元に戻す
+            </code>
+        </div>
+        <p>要素から文字がはみ出たら小さくします。それでもはみ出る場合は、文字を削ります。その後、引数の文字を末尾につけます。</p>
+        <button onclick="button3()">実行</button>
+        <button onclick="button4()">戻す</button>
+        <!-- <button onclick="textShrinkCut('.str2', '..など', 15)">実行</button> -->
 
         <div class="item str2">あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■1■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■2■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■3■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■4■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■5■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■6■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■7■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■8■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■9■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■10■</div>
 
@@ -73,4 +93,22 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+    var str1 = new textFit(".str1");
+    var str2 = new textFit(".str2");
+
+    function button1() {
+        str1.textCut('【終了】');
+    }
+    function button2() {
+        str1.restoreOriginalText();
+    }
+    function button3() {
+        str2.textShrinkCut('..など', 15);
+    }
+    function button4() {
+        str2.restoreOriginalText();
+    }
+</script>
 
