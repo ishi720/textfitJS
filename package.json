@@ -1,6 +1,6 @@
 {
   "name": "textfitjs",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "文字がはみ出ないように制御するjsです。",
   "main": "textfitJS.js",
   "files": [
