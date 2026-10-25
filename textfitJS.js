@@ -6,6 +6,9 @@ class textFit {
     constructor(selector) {
         this.selector = selector;
         this.targetEle = document.querySelector(this.selector);
+        if (this.targetEle === null) {
+            throw new Error(`textFit: 要素が見つかりません (selector: "${this.selector}")`);
+        }
         this.#orgText = this.targetEle.innerHTML;
         this.#orgSize = window.getComputedStyle(this.targetEle, null).getPropertyValue('font-size');
     }
