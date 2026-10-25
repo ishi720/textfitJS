@@ -11,21 +11,11 @@ class textFit {
     }
 
     #isProtrudeWidth(ele) {
-        const orgScrollLeft = ele.scrollLeft;
-        ele.scrollLeft = 0;
-        ele.scrollLeft = 1;
-        const result = (ele.scrollLeft > 0);
-        ele.scrollLeft = orgScrollLeft;
-        return result;    
+        return ele.scrollWidth > ele.clientWidth;
     }
 
     #isProtrudeHeight(ele) {
-        const orgScrollTop = ele.scrollTop;
-        ele.scrollTop = 0;
-        ele.scrollTop = 1;
-        const result = (ele.scrollTop > 0);
-        ele.scrollTop = orgScrollTop;
-        return result;
+        return ele.scrollHeight > ele.clientHeight;
     }
 
     /**
@@ -34,9 +24,6 @@ class textFit {
     * @param repeat 繰り返す上限値
     */
     textShrinkCut(leader = "…", repeat = 10) {
-        //一時的にスクロールバーをつける
-        this.targetEle.style.overflowY = "hidden";
-
         for (let i = 0; this.#isProtrudeHeight(this.targetEle) === true || i >= repeat ; i++) {
 
             if (i >= repeat - 1) {
@@ -58,8 +45,6 @@ class textFit {
                 this.targetEle.style.fontSize = (parseFloat(fontSize) - 1) + 'px';
             }
         }
-        //スクロールバーを消す
-        this.targetEle.style.overflowY = "visible";
     }
 
     /**
@@ -69,8 +54,6 @@ class textFit {
     textCut(leader = "…"){
         document.querySelectorAll(this.selector).forEach((element) => {
             const str = element.innerHTML;
-            //一時的にスクロールバーをつける
-            element.style.overflowY = 'hidden';
             if (this.#isProtrudeHeight(element) && str.length > 0) {
                 //収まる最大の文字数を二分探索する
                 let low = 0;
@@ -87,8 +70,6 @@ class textFit {
                 //文字をセットする
                 element.innerHTML = str.slice(0, low) + leader;
             }
-            //スクロールバーを消す
-            element.style.overflowY = 'visible';
         });
     }
 
