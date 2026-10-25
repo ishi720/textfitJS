@@ -68,14 +68,24 @@ class textFit {
     */
     textCut(leader = "…"){
         document.querySelectorAll(this.selector).forEach((element) => {
-            let str = element.innerHTML;
+            const str = element.innerHTML;
             //一時的にスクロールバーをつける
             element.style.overflowY = 'hidden';
-            while (this.#isProtrudeHeight(element) && str.length > 0) {
-                //末尾の文字を削る
-                str = str.slice(0, -1); 
+            if (this.#isProtrudeHeight(element) && str.length > 0) {
+                //収まる最大の文字数を二分探索する
+                let low = 0;
+                let high = str.length - 1;
+                while (low < high) {
+                    const mid = Math.ceil((low + high) / 2);
+                    element.innerHTML = str.slice(0, mid) + leader;
+                    if (this.#isProtrudeHeight(element)) {
+                        high = mid - 1;
+                    } else {
+                        low = mid;
+                    }
+                }
                 //文字をセットする
-                element.innerHTML = str + leader;
+                element.innerHTML = str.slice(0, low) + leader;
             }
             //スクロールバーを消す
             element.style.overflowY = 'visible';
