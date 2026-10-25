@@ -91,3 +91,11 @@ class textFit {
         return this.#orgSize;
     }
 }
+
+
+// CommonJS / ESM(バンドラー・Node.js) から読み込めるようにする
+// ブラウザで<script>読み込みした場合は従来通りグローバルの textFit として使える
+if (typeof module === "object" && module.exports) {
+    module.exports = textFit;
+    module.exports.textFit = textFit;
+}

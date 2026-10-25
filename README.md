@@ -23,6 +23,27 @@ npm i textfitjs
 yarn add textfitjs
 ```
 
+# 読み込み
+
+- ES Modules
+
+```js
+import textFit from "textfitjs";
+// または import { textFit } from "textfitjs";
+```
+
+- CommonJS
+
+```js
+const textFit = require("textfitjs");
+```
+
+- scriptタグ
+
+```html
+<script src="textfitJS.js"></script>
+```
+
 # 使い方
 
 -----------
