@@ -15,25 +15,9 @@
         gtag('config', 'UA-131403657-1');
     </script>
 
-    <script src="./textfitJS.js"></script>
-
-    <style type="text/css">
-        .item {
-            border: solid 1px gray;
-            margin: 10px;
-            font-size: 30px;
-            padding: 10px;
-        }
-        .str1 {
-            height: 300px;
-        }
-        code {
-            background-color: #4d4d4d;
-            color: #fff;
-            padding: 10px;
-            border-radius: 2px;
-        }
-    </style>
+    <link rel="stylesheet" href="./sample/sample.css">
+    <script src="./textfitJS.js" defer></script>
+    <script src="./sample/sample.js" defer></script>
 
 </head>
 <body>
@@ -42,8 +26,8 @@
 
     <h1>sample</h1>
 
-    <div style="display: table-cell;width: 500px;padding: 10px;">
-        <div style="background-color: #4d4d4d; padding: 10px;">
+    <div class="container">
+        <div class="code-block">
             <code>
                 const str1 = new textFit(".str1");
             </code>
@@ -52,8 +36,8 @@
                 str1.textCut('【終了】');
             </code>
         </div>
-        <p>要素から文字がはみ出たら文字を、文字を削り、引数の文字を末尾につけます。</p>
-        <div style="background-color: #4d4d4d; padding: 10px;">
+        <p>要素から文字がはみ出たら文字を削り、引数の文字を末尾につけます。</p>
+        <div class="code-block">
             <code>
                 const str1 = new textFit(".str1");
             </code>
@@ -66,9 +50,9 @@
 
 
         <div>
-            <button onclick="textCut()">textCut()</button>
-            <button onclick="textShrinkCut()">textShrinkCut()</button>
-            <button onclick="restoreOriginalText()">元に戻す</button>
+            <button id="btn-text-cut">textCut()</button>
+            <button id="btn-text-shrink-cut">textShrinkCut()</button>
+            <button id="btn-restore">元に戻す</button>
 
             <div class="item str1">あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■1■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■2■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■3■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■4■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■5■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■6■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■7■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■8■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■9■あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん■10■</div>
         </div>
@@ -77,20 +61,4 @@
 
 </body>
 </html>
-
-<script type="text/javascript">
-    var str1 = new textFit(".str1");
-
-    function textCut() {
-        str1.restoreOriginalText();
-        str1.textCut('【終了】');
-    }
-    function textShrinkCut() {
-        str1.restoreOriginalText();
-        str1.textShrinkCut('..など', 15);
-    }
-    function restoreOriginalText() {
-        str1.restoreOriginalText();
-    }
-</script>
 
